@@ -13,6 +13,7 @@
 		8815507C1A1278AB00CE982E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8815507B1A1278AB00CE982E /* Images.xcassets */; };
 		8815507F1A1278AB00CE982E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8815507D1A1278AB00CE982E /* LaunchScreen.xib */; };
 		8815508B1A1278AB00CE982E /* TaskIt_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815508A1A1278AB00CE982E /* TaskIt_Tests.swift */; };
+		881550951A129C7200CE982E /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881550941A129C7200CE982E /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		881550841A1278AB00CE982E /* TaskIt!Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TaskIt!Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		881550891A1278AB00CE982E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8815508A1A1278AB00CE982E /* TaskIt_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskIt_Tests.swift; sourceTree = "<group>"; };
+		881550941A129C7200CE982E /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +79,10 @@
 		881550711A1278AB00CE982E /* TaskIt! */ = {
 			isa = PBXGroup;
 			children = (
-				881550741A1278AB00CE982E /* AppDelegate.swift */,
-				881550761A1278AB00CE982E /* ViewController.swift */,
 				881550781A1278AB00CE982E /* Main.storyboard */,
+				881550741A1278AB00CE982E /* AppDelegate.swift */,
+				881550941A129C7200CE982E /* TaskCell.swift */,
+				881550761A1278AB00CE982E /* ViewController.swift */,
 				8815507B1A1278AB00CE982E /* Images.xcassets */,
 				8815507D1A1278AB00CE982E /* LaunchScreen.xib */,
 				881550721A1278AB00CE982E /* Supporting Files */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				881550771A1278AB00CE982E /* ViewController.swift in Sources */,
+				881550951A129C7200CE982E /* TaskCell.swift in Sources */,
 				881550751A1278AB00CE982E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
