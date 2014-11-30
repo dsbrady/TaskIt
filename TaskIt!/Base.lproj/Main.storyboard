@@ -63,12 +63,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="vrj-cI-Wk2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="smw-7n-WUl"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="smw-7n-WUl">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="wD8-Gq-RPr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5kU-wS-nsQ" id="cb0-FR-fNF"/>
                         <segue destination="oT3-nm-EAS" kind="show" identifier="showTaskDetail" id="VOe-LT-fhx"/>
-                        <segue destination="66l-cW-oB5" kind="presentation" id="OCa-Ya-lR4"/>
+                        <segue destination="66l-cW-oB5" kind="presentation" identifier="showTaskAdd" id="OCa-Ya-lR4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,8 +130,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="4Gy-rd-TXW">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="zvR-eM-UIV"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="nsj-uW-Dgr"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="zvR-eM-UIV">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="oT3-nm-EAS" id="kru-cs-wat"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="nsj-uW-Dgr">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="oT3-nm-EAS" id="IJL-7U-zQx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -157,6 +169,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="66l-cW-oB5" eventType="touchUpInside" id="TJg-Vd-b1g"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cO-Ee-1ZW">
                                 <rect key="frame" x="16" y="88" width="280" height="30"/>
@@ -197,10 +212,18 @@
                                 <state key="normal" title="Add Task">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTaskButtonTapped:" destination="66l-cW-oB5" eventType="touchUpInside" id="of3-jC-9AQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="25E-Pg-lGJ" id="MHQ-qw-JUv"/>
+                        <outlet property="subtaskTextField" destination="a3G-t1-y2j" id="SUX-E8-pAv"/>
+                        <outlet property="taskTextField" destination="7cO-Ee-1ZW" id="s6m-G5-QPV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFg-Zj-G7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
