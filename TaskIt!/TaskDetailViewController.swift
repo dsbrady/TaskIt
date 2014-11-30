@@ -11,7 +11,6 @@ import UIKit
 class TaskDetailViewController: UIViewController {
 
 	var detailTaskModel:TaskModel!
-	var mainVC:ViewController!
 	
 	@IBOutlet weak var taskTextField: UITextField!
 	@IBOutlet weak var subtaskTextField: UITextField!
@@ -38,8 +37,14 @@ class TaskDetailViewController: UIViewController {
 	}
 
 	@IBAction func doneButtonTapped(sender: UIBarButtonItem) {
-        var task = TaskModel(task: self.taskTextField.text, subtask: self.subtaskTextField.text, date: self.dueDatePicker.date, isComplete: false)
-		self.mainVC.allTasks[0][self.mainVC.tableView.indexPathForSelectedRow()!.row] = task
+		let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+		
+		self.detailTaskModel.task = self.taskTextField.text
+		self.detailTaskModel.subtask = self.subtaskTextField.text
+		self.detailTaskModel.date = self.dueDatePicker.date
+		
+		appDelegate.saveContext()
+		
 		self.navigationController?.popViewControllerAnimated(true)
 	}
 }
